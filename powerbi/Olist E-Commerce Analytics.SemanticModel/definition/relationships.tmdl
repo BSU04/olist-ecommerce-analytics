@@ -1,0 +1,66 @@
+relationship 94f48e9a-ffca-42b8-bf9b-c90babd2dee1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_items.shipping_limit_date
+	toColumn: LocalDateTable_dd591123-5522-4037-82cd-0636a6d16f22.Date
+
+relationship 28a90e5c-f063-40ac-b0cc-bf51eb87d5b3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_reviews.review_creation_date
+	toColumn: LocalDateTable_07cdbe49-da24-425f-bcb5-e2d7da70c9a7.Date
+
+relationship 176fd79e-2798-49bd-b975-fc40b2d9cedc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: order_reviews.review_answer_timestamp
+	toColumn: LocalDateTable_d163d939-bb61-4f84-9432-975c90a68290.Date
+
+relationship 0eee0a0b-4ccf-443b-9e67-2e6c138b3045
+	joinOnDateBehavior: datePartOnly
+	fromColumn: orders.order_purchase_timestamp
+	toColumn: LocalDateTable_973bf1e5-933e-498d-9f75-2f76ee85709d.Date
+
+relationship eeff894c-4f3d-471a-98b3-fe755c36271d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: orders.order_approved_at
+	toColumn: LocalDateTable_16953d7a-179a-4832-a1d9-eef992ec6c7b.Date
+
+relationship 4d63f23a-f7e7-4faf-ad10-9535f49e0154
+	joinOnDateBehavior: datePartOnly
+	fromColumn: orders.order_delivered_carrier_date
+	toColumn: LocalDateTable_a774c5a6-d61d-494d-82cc-10a4f6241b5d.Date
+
+relationship 903f2f90-2cf6-4993-88e2-a6a2bd7e5a4e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: orders.order_delivered_customer_date
+	toColumn: LocalDateTable_137ec8a2-7ea0-4cd1-8557-aeda4f547c0f.Date
+
+relationship c70e501b-6317-48d2-81e6-71184ee85ed9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: orders.order_estimated_delivery_date
+	toColumn: LocalDateTable_2c3b6cd1-950a-4e08-b030-eb5e077cfdb9.Date
+
+relationship AutoDetected_d2e06791-8198-4b8b-b783-896c8a2dc332
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: orders.customer_id
+	toColumn: customers.customer_id
+
+relationship AutoDetected_e9168241-502c-4f7d-96cd-857a847689ca
+	fromColumn: order_items.order_id
+	toColumn: orders.order_id
+
+relationship AutoDetected_8cec392c-c3a1-45eb-be23-4e2ba3df0a71
+	fromColumn: order_payments.order_id
+	toColumn: orders.order_id
+
+relationship AutoDetected_ad3f35b1-7a77-4d07-a412-a339e4d5c2f3
+	fromColumn: order_reviews.order_id
+	toColumn: orders.order_id
+
+relationship AutoDetected_ccea5f7e-ba47-4714-9ca0-3abd695b77d8
+	fromColumn: order_items.product_id
+	toColumn: products.product_id
+
+relationship AutoDetected_42108564-a82b-46eb-bcf8-baf66a19bab3
+	fromColumn: order_items.seller_id
+	toColumn: sellers.seller_id
+
