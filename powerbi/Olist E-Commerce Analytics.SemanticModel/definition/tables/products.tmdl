@@ -69,16 +69,17 @@ table products
 				    Source = Csv.Document(File.Contents("C:\Users\itsme\Desktop\Resources\Project 3\data\products.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"product_id", type text}, {"product_category_name", type text}, {"product_name_lenght", Int64.Type}, {"product_description_lenght", Int64.Type}, {"product_photos_qty", Int64.Type}, {"product_weight_g", Int64.Type}, {"product_length_cm", Int64.Type}, {"product_height_cm", Int64.Type}, {"product_width_cm", Int64.Type}}),
-				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"product_category_name"}, product_category_name, {"product_category_name"}, "product_category_name.1", JoinKind.LeftOuter),
-				    #"Expanded product_category_name.1" = Table.ExpandTableColumn(#"Merged Queries", "product_category_name.1", {"product_category_name_english"}, {"product_category_name.1.product_category_name_english"}),
-				    #"Added Custom" = Table.AddColumn(#"Expanded product_category_name.1", "product_category_name_english_final", each if [product_category_name.1.product_category_name_english] <> null then [product_category_name.1.product_category_name_english] else if [product_category_name] = "pc_gamer" then "pc_gamer" else if [product_category_name] = "portateis_cozinha_e_preparadores_de_alimentos" then "portable_kitchen_and_food_preparers" else "Uncategorized"),
-				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"product_category_name", "product_category_name.1.product_category_name_english"}),
-				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"product_category_name_english_final", "product_category_name"}}),
-				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"product_id", "product_category_name", "product_name_lenght", "product_description_lenght", "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"}),
-				    #"Renamed Columns1" = Table.RenameColumns(#"Reordered Columns",{{"product_name_lenght", "product_name_length"}, {"product_description_lenght", "product_description_length"}}),
-				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns1",{"product_name_length", "product_description_length"})
+				    #"Merged product_category_name from products table and product_category_name table" = Table.NestedJoin(#"Changed Type", {"product_category_name"}, product_category_name, {"product_category_name"}, "product_category_name.1", JoinKind.LeftOuter),
+				    #"Expanded product_category_name.1" = Table.ExpandTableColumn(#"Merged product_category_name from products table and product_category_name table", "product_category_name.1", {"product_category_name_english"}, {"product_category_name.1.product_category_name_english"}),
+				    #"Handled missing categories" = Table.AddColumn(#"Expanded product_category_name.1", "product_category_name_english_final", each if [product_category_name.1.product_category_name_english] <> null then [product_category_name.1.product_category_name_english] else if [product_category_name] = "pc_gamer" then "pc_gamer" else if [product_category_name] = "portateis_cozinha_e_preparadores_de_alimentos" then "portable_kitchen_and_food_preparers" else "Uncategorized"),
+				    #"Removed merged and original product_category_name column" = Table.RemoveColumns(#"Handled missing categories",{"product_category_name", "product_category_name.1.product_category_name_english"}),
+				    #"Renamed final product_category_name column" = Table.RenameColumns(#"Removed merged and original product_category_name column",{{"product_category_name_english_final", "product_category_name"}}),
+				    #"Reordered product_category column" = Table.ReorderColumns(#"Renamed final product_category_name column",{"product_id", "product_category_name", "product_name_lenght", "product_description_lenght", "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"}),
+				    #"Renamed product_length columns" = Table.RenameColumns(#"Reordered product_category column",{{"product_name_lenght", "product_name_length"}, {"product_description_lenght", "product_description_length"}}),
+				    #"Removed product_length columns" = Table.RemoveColumns(#"Renamed product_length columns",{"product_name_length", "product_description_length"}),
+				    #"Changed product_category_name datatype to text" = Table.TransformColumnTypes(#"Removed product_length columns",{{"product_category_name", type text}})
 				in
-				    #"Removed Columns1"
+				    #"Changed product_category_name datatype to text"
 
 	annotation PBI_NavigationStepName = Navigation
 

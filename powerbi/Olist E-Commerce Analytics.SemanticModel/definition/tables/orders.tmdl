@@ -95,15 +95,43 @@ table orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column delivery_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 62361d40-c074-4fba-b62b-2558ae8350c9
+		summarizeBy: sum
+		sourceColumn: delivery_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_performance
+		dataType: string
+		lineageTag: 14f6dd74-bc1c-4eda-b1c8-5c405ca04a80
+		summarizeBy: none
+		sourceColumn: delivery_performance
+
+		annotation SummarizationSetBy = Automatic
+
 	partition orders = m
 		mode: import
 		source =
 				let
 				    Source = Csv.Document(File.Contents("C:\Users\itsme\Desktop\Resources\Project 3\data\orders.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", type text}, {"customer_id", type text}, {"order_status", type text}, {"order_purchase_timestamp", type datetime}, {"order_approved_at", type datetime}, {"order_delivered_carrier_date", type datetime}, {"order_delivered_customer_date", type datetime}, {"order_estimated_delivery_date", type datetime}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", type text}, {"customer_id", type text}, {"order_status", type text}, {"order_purchase_timestamp", type datetime}, {"order_approved_at", type datetime}, {"order_delivered_carrier_date", type datetime}, {"order_delivered_customer_date", type datetime}, {"order_estimated_delivery_date", type datetime}}),
+				    #"Created delivery_days column" = Table.AddColumn(#"Changed Type", "delivery_days", each if [order_delivered_customer_date] = null
+				then null
+				else Duration.Days(
+				    [order_delivered_customer_date] - [order_purchase_timestamp]
+				)),
+				    #"Changed delivery_days datatype to whole number" = Table.TransformColumnTypes(#"Created delivery_days column",{{"delivery_days", Int64.Type}}),
+				    #"Created delivery_performance column" = Table.AddColumn(#"Changed delivery_days datatype to whole number", "delivery_performance", each if [order_delivered_customer_date] = null then "Not Delivered"
+				else if [order_delivered_customer_date] < [order_estimated_delivery_date] then "Early"
+				else if [order_delivered_customer_date] = [order_estimated_delivery_date] then "On Time"
+				else "Late"),
+				    #"Changed delivery_performance datatype to text" = Table.TransformColumnTypes(#"Created delivery_performance column",{{"delivery_performance", type text}})
 				in
-				    #"Changed Type"
+				    #"Changed delivery_performance datatype to text"
 
 	annotation PBI_NavigationStepName = Navigation
 
