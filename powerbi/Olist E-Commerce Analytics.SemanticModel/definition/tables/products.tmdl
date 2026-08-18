@@ -9,24 +9,6 @@ table products
 
 		annotation SummarizationSetBy = Automatic
 
-	column product_name_length
-		dataType: int64
-		formatString: 0
-		lineageTag: c4cd1324-4b0b-4d40-a7e1-92ea06eca7d7
-		summarizeBy: none
-		sourceColumn: product_name_length
-
-		annotation SummarizationSetBy = Automatic
-
-	column product_description_length
-		dataType: int64
-		formatString: 0
-		lineageTag: b5454b9e-4b73-4a95-83a4-ab4ebff985f6
-		summarizeBy: none
-		sourceColumn: product_description_length
-
-		annotation SummarizationSetBy = Automatic
-
 	column product_photos_qty
 		dataType: int64
 		formatString: 0
@@ -93,9 +75,10 @@ table products
 				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"product_category_name", "product_category_name.1.product_category_name_english"}),
 				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"product_category_name_english_final", "product_category_name"}}),
 				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"product_id", "product_category_name", "product_name_lenght", "product_description_lenght", "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"}),
-				    #"Renamed Columns1" = Table.RenameColumns(#"Reordered Columns",{{"product_name_lenght", "product_name_length"}, {"product_description_lenght", "product_description_length"}})
+				    #"Renamed Columns1" = Table.RenameColumns(#"Reordered Columns",{{"product_name_lenght", "product_name_length"}, {"product_description_lenght", "product_description_length"}}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns1",{"product_name_length", "product_description_length"})
 				in
-				    #"Renamed Columns1"
+				    #"Removed Columns1"
 
 	annotation PBI_NavigationStepName = Navigation
 
