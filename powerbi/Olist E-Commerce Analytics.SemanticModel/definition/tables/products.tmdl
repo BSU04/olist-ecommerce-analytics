@@ -9,19 +9,11 @@ table products
 
 		annotation SummarizationSetBy = Automatic
 
-	column product_category_name
-		dataType: string
-		lineageTag: 9480cbcf-0441-4317-85c0-d4bc0205083e
-		summarizeBy: none
-		sourceColumn: product_category_name
-
-		annotation SummarizationSetBy = Automatic
-
 	column product_name_lenght
 		dataType: int64
 		formatString: 0
 		lineageTag: c4cd1324-4b0b-4d40-a7e1-92ea06eca7d7
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_name_lenght
 
 		annotation SummarizationSetBy = Automatic
@@ -30,7 +22,7 @@ table products
 		dataType: int64
 		formatString: 0
 		lineageTag: b5454b9e-4b73-4a95-83a4-ab4ebff985f6
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_description_lenght
 
 		annotation SummarizationSetBy = Automatic
@@ -39,7 +31,7 @@ table products
 		dataType: int64
 		formatString: 0
 		lineageTag: 1ef5af3e-7716-438f-9245-94c1730896cf
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_photos_qty
 
 		annotation SummarizationSetBy = Automatic
@@ -48,7 +40,7 @@ table products
 		dataType: int64
 		formatString: 0
 		lineageTag: 4a48db6e-8738-4074-a112-4cbbfb7ff39d
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_weight_g
 
 		annotation SummarizationSetBy = Automatic
@@ -57,7 +49,7 @@ table products
 		dataType: int64
 		formatString: 0
 		lineageTag: 46eb4615-f36d-4d51-9490-689107b6c69b
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_length_cm
 
 		annotation SummarizationSetBy = Automatic
@@ -66,7 +58,7 @@ table products
 		dataType: int64
 		formatString: 0
 		lineageTag: 060a4e48-99b4-4f8f-a119-88feea9468ec
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_height_cm
 
 		annotation SummarizationSetBy = Automatic
@@ -75,24 +67,16 @@ table products
 		dataType: int64
 		formatString: 0
 		lineageTag: cb0fbafb-8b70-419e-b045-7876bc93f881
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: product_width_cm
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'product_category_name.1.product_category_name_english'
-		dataType: string
-		lineageTag: 9c8256ab-d67b-4f2f-a859-71c345819da0
-		summarizeBy: none
-		sourceColumn: product_category_name.1.product_category_name_english
-
-		annotation SummarizationSetBy = Automatic
-
-	column product_category_name_english_final
+	column product_category_name
 		dataType: string
 		lineageTag: 6f2ff1df-249d-4e85-8a65-0e55dc6a2c61
 		summarizeBy: none
-		sourceColumn: product_category_name_english_final
+		sourceColumn: product_category_name
 
 		annotation SummarizationSetBy = Automatic
 
@@ -105,9 +89,12 @@ table products
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"product_id", type text}, {"product_category_name", type text}, {"product_name_lenght", Int64.Type}, {"product_description_lenght", Int64.Type}, {"product_photos_qty", Int64.Type}, {"product_weight_g", Int64.Type}, {"product_length_cm", Int64.Type}, {"product_height_cm", Int64.Type}, {"product_width_cm", Int64.Type}}),
 				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"product_category_name"}, product_category_name, {"product_category_name"}, "product_category_name.1", JoinKind.LeftOuter),
 				    #"Expanded product_category_name.1" = Table.ExpandTableColumn(#"Merged Queries", "product_category_name.1", {"product_category_name_english"}, {"product_category_name.1.product_category_name_english"}),
-				    #"Added Custom" = Table.AddColumn(#"Expanded product_category_name.1", "product_category_name_english_final", each if [product_category_name.1.product_category_name_english] <> null then [product_category_name.1.product_category_name_english] else if [product_category_name] = "pc_gamer" then "pc_gamer" else if [product_category_name] = "portateis_cozinha_e_preparadores_de_alimentos" then "portable_kitchen_and_food_preparers" else "Uncategorized")
+				    #"Added Custom" = Table.AddColumn(#"Expanded product_category_name.1", "product_category_name_english_final", each if [product_category_name.1.product_category_name_english] <> null then [product_category_name.1.product_category_name_english] else if [product_category_name] = "pc_gamer" then "pc_gamer" else if [product_category_name] = "portateis_cozinha_e_preparadores_de_alimentos" then "portable_kitchen_and_food_preparers" else "Uncategorized"),
+				    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"product_category_name", "product_category_name.1.product_category_name_english"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"product_category_name_english_final", "product_category_name"}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"product_id", "product_category_name", "product_name_lenght", "product_description_lenght", "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"})
 				in
-				    #"Added Custom"
+				    #"Reordered Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
