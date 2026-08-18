@@ -64,3 +64,7 @@ relationship AutoDetected_42108564-a82b-46eb-bcf8-baf66a19bab3
 	fromColumn: order_items.seller_id
 	toColumn: sellers.seller_id
 
+relationship AutoDetected_86a09af8-94bc-4c0c-9b34-bec70f67c45b
+	fromColumn: products.'product_category_name.1.product_category_name_english'
+	toColumn: product_category_name.product_category_name_english
+
