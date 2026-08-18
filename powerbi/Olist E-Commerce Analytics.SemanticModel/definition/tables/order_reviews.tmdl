@@ -26,22 +26,6 @@ table order_reviews
 
 		annotation SummarizationSetBy = Automatic
 
-	column review_comment_title
-		dataType: string
-		lineageTag: 0f75e892-d4ce-49c9-9e73-5e761b907a84
-		summarizeBy: none
-		sourceColumn: review_comment_title
-
-		annotation SummarizationSetBy = Automatic
-
-	column review_comment_message
-		dataType: string
-		lineageTag: 987b2497-1759-4abe-9db9-052c1f8b3ee6
-		summarizeBy: none
-		sourceColumn: review_comment_message
-
-		annotation SummarizationSetBy = Automatic
-
 	column review_creation_date
 		dataType: dateTime
 		formatString: General Date
@@ -76,9 +60,10 @@ table order_reviews
 				let
 				    Source = Csv.Document(File.Contents("C:\Users\itsme\Desktop\Resources\Project 3\data\order_reviews.csv"),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"review_id", type text}, {"order_id", type text}, {"review_score", Int64.Type}, {"review_comment_title", type text}, {"review_comment_message", type text}, {"review_creation_date", type datetime}, {"review_answer_timestamp", type datetime}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"review_id", type text}, {"order_id", type text}, {"review_score", Int64.Type}, {"review_comment_title", type text}, {"review_comment_message", type text}, {"review_creation_date", type datetime}, {"review_answer_timestamp", type datetime}}),
+				    #"Removed review comment columns" = Table.RemoveColumns(#"Changed Type",{"review_comment_title", "review_comment_message"})
 				in
-				    #"Changed Type"
+				    #"Removed review comment columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
