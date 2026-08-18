@@ -1,0 +1,27 @@
+expression geolocation =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\itsme\Desktop\Resources\Project 3\data\geolocation.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"geolocation_zip_code_prefix", Int64.Type}, {"geolocation_lat", type number}, {"geolocation_lng", type number}, {"geolocation_city", type text}, {"geolocation_state", type text}})
+		in
+		    #"Changed Type"
+	lineageTag: 96f154bf-ff04-4333-8a72-2f96765ebbe1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression product_category_name =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\itsme\Desktop\Resources\Project 3\data\product_category_name.csv"),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}}),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"product_category_name", type text}, {"product_category_name_english", type text}})
+		in
+		    #"Changed Type1"
+	lineageTag: 3cda7e86-59e9-4efc-a03a-d4279b8b96a9
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

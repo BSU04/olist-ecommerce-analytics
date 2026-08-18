@@ -23,19 +23,6 @@
         },
         {
           "location": {
-            "x": 1136.7425364527692,
-            "y": 311.104541968042
-          },
-          "nodeIndex": "geolocation",
-          "nodeLineageTag": "7caa7661-ebbe-4dfd-99a5-e9d08ca51eb5",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 334.22488516330827,
             "y": 189.98580912901468
           },
@@ -82,19 +69,6 @@
           "nodeLineageTag": "fa572b53-32b1-40a2-8e03-8a94afc9b02e",
           "size": {
             "height": 272,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
-            "x": 1420.7425364527692,
-            "y": 347.104541968042
-          },
-          "nodeIndex": "product_category_name",
-          "nodeLineageTag": "d210777b-4518-4a83-b2a8-c30cf7379ad2",
-          "size": {
-            "height": 128,
             "width": 234
           },
           "zIndex": 0

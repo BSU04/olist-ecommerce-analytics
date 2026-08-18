@@ -14,7 +14,6 @@ annotation PBI_QueryOrder = ["customers","geolocation","order_items","order_paym
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table customers
-ref table geolocation
 ref table order_items
 ref table DateTableTemplate_b72c43a5-8b62-45dc-97dd-dd6aac5f437b
 ref table LocalDateTable_dd591123-5522-4037-82cd-0636a6d16f22
@@ -28,7 +27,6 @@ ref table LocalDateTable_16953d7a-179a-4832-a1d9-eef992ec6c7b
 ref table LocalDateTable_a774c5a6-d61d-494d-82cc-10a4f6241b5d
 ref table LocalDateTable_137ec8a2-7ea0-4cd1-8557-aeda4f547c0f
 ref table LocalDateTable_2c3b6cd1-950a-4e08-b030-eb5e077cfdb9
-ref table product_category_name
 ref table products
 ref table sellers
 
