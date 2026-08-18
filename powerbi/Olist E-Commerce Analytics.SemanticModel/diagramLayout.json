@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 805.87037761433544,
-            "y": 572.209083936084
+            "x": 723.87037761433544,
+            "y": 682.209083936084
           },
           "nodeIndex": "customers",
           "nodeLineageTag": "def220fb-fe2b-4966-9264-258e9d3dd928",
@@ -19,7 +19,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 7
         },
         {
           "location": {
@@ -32,12 +32,12 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
             "x": 618.54784068647575,
-            "y": -50
+            "y": 0
           },
           "nodeIndex": "order_payments",
           "nodeLineageTag": "349cb918-01dd-4c88-9473-0299c20d1a5f",
@@ -45,12 +45,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 902.74253645276917,
-            "y": 181.98538050700938
+            "x": 910.74253645276917,
+            "y": 214.98538050700938
           },
           "nodeIndex": "order_reviews",
           "nodeLineageTag": "ca5949d6-033c-49e4-bbb0-aea1a7205275",
@@ -58,12 +58,12 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 618.51779432130422,
-            "y": 250.01189609288434
+            "x": 623.51779432130422,
+            "y": 288.01189609288434
           },
           "nodeIndex": "orders",
           "nodeLineageTag": "fa572b53-32b1-40a2-8e03-8a94afc9b02e",
@@ -71,7 +71,7 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
@@ -84,12 +84,12 @@
             "height": 296,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 122.38257242445434,
-            "y": 488.16743591123304
+            "x": 220.38257242445434,
+            "y": 564.167435911233
           },
           "nodeIndex": "sellers",
           "nodeLineageTag": "7828e214-a1b0-4455-beb9-dd1d90d63cf9",
@@ -97,7 +97,7 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 6
         }
       ],
       "name": "All tables",

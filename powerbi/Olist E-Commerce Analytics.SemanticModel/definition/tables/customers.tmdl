@@ -21,7 +21,7 @@ table customers
 		dataType: int64
 		formatString: 0
 		lineageTag: 17248564-ce39-48d2-bb4b-838e11e884f5
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: customer_zip_code_prefix
 
 		annotation SummarizationSetBy = Automatic

@@ -39,8 +39,6 @@ relationship c70e501b-6317-48d2-81e6-71184ee85ed9
 	toColumn: LocalDateTable_2c3b6cd1-950a-4e08-b030-eb5e077cfdb9.Date
 
 relationship AutoDetected_d2e06791-8198-4b8b-b783-896c8a2dc332
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
 	fromColumn: orders.customer_id
 	toColumn: customers.customer_id
 
