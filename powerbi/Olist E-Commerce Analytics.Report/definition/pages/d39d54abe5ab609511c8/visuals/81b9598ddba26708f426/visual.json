@@ -4,10 +4,10 @@
   "position": {
     "x": 24.439140811455847,
     "y": 173.11058074781224,
-    "z": 9000,
+    "z": 8000,
     "height": 289.1964996022275,
     "width": 616.07000795544946,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "lineChart",
@@ -303,73 +303,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9e2cf0289e8b1c248866",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_items"
-              }
-            },
-            "Property": "Total Sales"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b6ddec0d062032023254",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "orders"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "order_purchase_timestamp"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
-              }
-            },
-            "Level": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3c59d5a3396bc85651df",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "PropertyVariationSource": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "orders"
-                      }
-                    },
-                    "Name": "Variation",
-                    "Property": "order_purchase_timestamp"
-                  }
-                },
-                "Hierarchy": "Date Hierarchy"
-              }
-            },
-            "Level": "Month"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

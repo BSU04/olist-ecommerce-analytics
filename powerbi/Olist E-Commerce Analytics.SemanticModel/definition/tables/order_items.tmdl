@@ -12,6 +12,10 @@ table order_items
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Freight Cost % of Sales' = DIVIDE(SUM(order_items[freight_value]), [Total Sales], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b2a3b85c-8cad-4ff5-9443-2fb5728d9198
+
 	column order_id
 		dataType: string
 		lineageTag: 1341ed03-0c7b-44a3-bb4b-f148a1f5d95a

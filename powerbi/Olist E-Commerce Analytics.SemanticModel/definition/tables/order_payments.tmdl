@@ -61,9 +61,11 @@ table order_payments
 				let
 				    Source = Csv.Document(File.Contents("C:\Users\itsme\Desktop\Resources\Project 3\data\order_payments.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", type text}, {"payment_sequential", Int64.Type}, {"payment_type", type text}, {"payment_installments", Int64.Type}, {"payment_value", type number}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"order_id", type text}, {"payment_sequential", Int64.Type}, {"payment_type", type text}, {"payment_installments", Int64.Type}, {"payment_value", type number}}),
+				    #"Removed underscores" = Table.ReplaceValue(#"Changed Type","_"," ",Replacer.ReplaceText,{"payment_type"}),
+				    #"Capitalized payment type values" = Table.TransformColumns(#"Removed underscores",{{"payment_type", Text.Proper, type text}})
 				in
-				    #"Changed Type"
+				    #"Capitalized payment type values"
 
 	annotation PBI_NavigationStepName = Navigation
 

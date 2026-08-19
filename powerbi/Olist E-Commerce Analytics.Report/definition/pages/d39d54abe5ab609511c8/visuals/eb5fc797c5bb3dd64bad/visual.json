@@ -1,33 +1,33 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "bd1b9aee59475948083d",
+  "name": "eb5fc797c5bb3dd64bad",
   "position": {
-    "x": 874.11466260781333,
-    "y": 55.200405885337396,
-    "z": 4000,
-    "height": 109.1019786910198,
-    "width": 185.08371385083714,
-    "tabOrder": 4000
+    "x": 24.702894870492635,
+    "y": 483.65667851701369,
+    "z": 10000,
+    "height": 236.62772981208735,
+    "width": 423.199593702387,
+    "tabOrder": 10000
   },
   "visual": {
-    "visualType": "cardVisual",
+    "visualType": "gauge",
     "query": {
       "queryState": {
-        "Data": {
+        "Y": {
           "projections": [
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "orders"
+                      "Entity": "order_items"
                     }
                   },
-                  "Property": "Delivery Rate"
+                  "Property": "Freight Cost % of Sales"
                 }
               },
-              "queryRef": "orders.Delivery Rate",
-              "nativeQueryRef": "Delivery Rate"
+              "queryRef": "order_items.Freight Cost % of Sales",
+              "nativeQueryRef": "Freight Cost % of Sales"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "orders"
+                    "Entity": "order_items"
                   }
                 },
-                "Property": "Delivery Rate"
+                "Property": "Freight Cost % of Sales"
               }
             },
             "direction": "Descending"
@@ -52,55 +52,36 @@
       }
     },
     "objects": {
-      "value": [
+      "labels": [
         {
           "properties": {
-            "labelPrecision": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
+                  "Value": "false"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "orders.Delivery Rate"
           }
         }
       ],
-      "fillCustom": [
+      "axis": [
         {
-          "properties": {
-            "fillColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#F7F9FB'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
+          "properties": {}
         }
-      ],
-      "label": [
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
         {
           "properties": {
-            "fontSize": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "'Freight Cost as % of Sales'"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ]
@@ -110,15 +91,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "cb3858b466190edbeb7d",
+        "name": "0e5a521a8882c2f16791",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "orders"
+                "Entity": "order_items"
               }
             },
-            "Property": "Delivery Rate"
+            "Property": "Freight Cost % of Sales"
           }
         },
         "type": "Advanced"

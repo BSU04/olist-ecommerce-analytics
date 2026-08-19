@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "4e21b17f614e7d1345af",
+  "name": "a62efe18ead5cbc559ec",
   "position": {
-    "x": 1048.1582952815829,
-    "y": 55.849822425164895,
-    "z": 7000,
-    "height": 110.40081177067479,
-    "width": 224.04870624048706,
-    "tabOrder": 7000
+    "x": 1044.022346368715,
+    "y": 55.256475368207212,
+    "z": 10001,
+    "height": 109.86287455561198,
+    "width": 223.62620619603859,
+    "tabOrder": 10001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -52,35 +52,6 @@
       }
     },
     "objects": {
-      "value": [
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "1L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "order_reviews.Average Review Score"
-          }
-        }
-      ],
-      "layout": [
-        {
-          "properties": {
-            "autoGrid": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
       "fillCustom": [
         {
           "properties": {
@@ -119,53 +90,13 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
+      "background": [
         {
           "properties": {
-            "show": {
+            "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTitle": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
+                  "Value": "93D"
                 }
               }
             }
@@ -174,5 +105,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9042f0b6e0d02a730fe6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "order_reviews"
+              }
+            },
+            "Property": "Average Review Score"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
