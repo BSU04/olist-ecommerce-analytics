@@ -1,6 +1,32 @@
 table orders
 	lineageTag: fa572b53-32b1-40a2-8e03-8a94afc9b02e
 
+	measure 'Total Orders' = DISTINCTCOUNT(orders[order_id])
+		formatString: 0
+		lineageTag: d0f496c8-1028-4d9e-b80f-a749c3fd5224
+
+	measure 'Average Order Value' = DIVIDE([Total Sales], [Total Orders])
+		lineageTag: d4006607-af54-49df-b747-9fe590cfeed2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Delivery Days' = AVERAGE(orders[delivery_days])
+		lineageTag: aa06786e-a97c-492d-983b-029517c2c0f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Delivered Orders' = CALCULATE([Total Orders], orders[order_status] = "delivered")
+		formatString: 0
+		lineageTag: 04397aa7-a8ce-4f7a-a197-dd521a804f1a
+
+	measure 'Delivery Rate' = DIVIDE([Delivered Orders], [Total Orders])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6430276b-807a-476b-9762-468bfc85779e
+
+	measure 'Canceled Orders' = CALCULATE([Total Orders], orders[order_status] = "canceled")
+		formatString: 0
+		lineageTag: fa106c6d-c3ee-49e3-a31c-ec8ae81d1f08
+
 	column order_id
 		dataType: string
 		lineageTag: e6dfdcf7-8877-4757-8818-5794250ea8cc

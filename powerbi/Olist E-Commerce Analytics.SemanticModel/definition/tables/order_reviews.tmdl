@@ -1,6 +1,11 @@
 table order_reviews
 	lineageTag: ca5949d6-033c-49e4-bbb0-aea1a7205275
 
+	measure 'Average Review Score' = AVERAGE(order_reviews[review_score])
+		lineageTag: afba9697-263d-49a1-9176-10b84db83e70
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column review_id
 		dataType: string
 		lineageTag: 440befed-4ffb-4843-9fc7-19d6b8fb34e2

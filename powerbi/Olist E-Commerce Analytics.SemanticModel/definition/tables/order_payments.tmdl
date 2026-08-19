@@ -1,6 +1,16 @@
 table order_payments
 	lineageTag: 349cb918-01dd-4c88-9473-0299c20d1a5f
 
+	measure 'Total Payment Value' = SUM(order_payments[payment_value])
+		lineageTag: f25b1642-3312-4ab8-9fe6-c7b2ce6a0070
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Payment Value' = AVERAGE(order_payments[payment_value])
+		lineageTag: 665d94de-b15e-4a46-928a-9c01d65d0cfd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column order_id
 		dataType: string
 		lineageTag: 75875032-339d-42c8-9dea-8c7636dbc6ef

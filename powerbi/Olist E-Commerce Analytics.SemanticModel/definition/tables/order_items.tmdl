@@ -1,6 +1,16 @@
 table order_items
 	lineageTag: 4448e38d-03dd-4dbb-aadd-9d42c18f01b2
 
+	measure 'Total Sales' = SUM(order_items[price])
+		lineageTag: 9a538a05-a1cd-4241-86f8-b24ac2a15720
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Freight' = SUM(order_items[freight_value])
+		lineageTag: d8d55084-c869-4b3c-9ab2-413de7b687d6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column order_id
 		dataType: string
 		lineageTag: 1341ed03-0c7b-44a3-bb4b-f148a1f5d95a

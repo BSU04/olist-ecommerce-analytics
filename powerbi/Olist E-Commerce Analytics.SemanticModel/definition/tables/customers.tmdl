@@ -1,6 +1,10 @@
 table customers
 	lineageTag: def220fb-fe2b-4966-9264-258e9d3dd928
 
+	measure 'Total Customers' = DISTINCTCOUNT(customers[customer_unique_id])
+		formatString: 0
+		lineageTag: b737e32e-e3ad-4192-bba5-36fa045e956e
+
 	column customer_id
 		dataType: string
 		lineageTag: 57920e3a-de06-4f94-8e79-1a06b98fd63c
