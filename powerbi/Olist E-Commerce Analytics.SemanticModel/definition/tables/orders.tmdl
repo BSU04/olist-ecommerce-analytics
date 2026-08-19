@@ -6,9 +6,10 @@ table orders
 		lineageTag: d0f496c8-1028-4d9e-b80f-a749c3fd5224
 
 	measure 'Average Order Value' = DIVIDE([Total Sales], [Total Orders])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: d4006607-af54-49df-b747-9fe590cfeed2
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Average Delivery Days' = AVERAGE(orders[delivery_days])
 		lineageTag: aa06786e-a97c-492d-983b-029517c2c0f4

@@ -77,9 +77,11 @@ table products
 				    #"Reordered product_category column" = Table.ReorderColumns(#"Renamed final product_category_name column",{"product_id", "product_category_name", "product_name_lenght", "product_description_lenght", "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"}),
 				    #"Renamed product_length columns" = Table.RenameColumns(#"Reordered product_category column",{{"product_name_lenght", "product_name_length"}, {"product_description_lenght", "product_description_length"}}),
 				    #"Removed product_length columns" = Table.RemoveColumns(#"Renamed product_length columns",{"product_name_length", "product_description_length"}),
-				    #"Changed product_category_name datatype to text" = Table.TransformColumnTypes(#"Removed product_length columns",{{"product_category_name", type text}})
+				    #"Changed product_category_name datatype to text" = Table.TransformColumnTypes(#"Removed product_length columns",{{"product_category_name", type text}}),
+				    #"Removed underscores in product categories" = Table.ReplaceValue(#"Changed product_category_name datatype to text","_"," ",Replacer.ReplaceText,{"product_category_name"}),
+				    #"Capitalized product category names" = Table.TransformColumns(#"Removed underscores in product categories",{{"product_category_name", Text.Proper, type text}})
 				in
-				    #"Changed product_category_name datatype to text"
+				    #"Capitalized product category names"
 
 	annotation PBI_NavigationStepName = Navigation
 

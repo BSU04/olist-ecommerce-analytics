@@ -2,9 +2,10 @@ table order_items
 	lineageTag: 4448e38d-03dd-4dbb-aadd-9d42c18f01b2
 
 	measure 'Total Sales' = SUM(order_items[price])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 9a538a05-a1cd-4241-86f8-b24ac2a15720
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure 'Total Freight' = SUM(order_items[freight_value])
 		lineageTag: d8d55084-c869-4b3c-9ab2-413de7b687d6
