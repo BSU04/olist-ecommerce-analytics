@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "803722f9d10f212cdc60",
+  "name": "06343416ec12947d657d",
   "position": {
-    "x": 651.72908366533864,
-    "y": 483.44223107569724,
-    "z": 6000,
-    "height": 236.6215139442231,
-    "width": 605.83266932270919,
-    "tabOrder": 6000
+    "x": 466.5941240478781,
+    "y": 412.9706202393906,
+    "z": 7000,
+    "height": 306.42002176278561,
+    "width": 490.96844396082696,
+    "tabOrder": 7000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "order_items"
+                      "Entity": "customers"
                     }
                   },
-                  "Property": "Total Sales"
+                  "Property": "Average Revenue per Customer"
                 }
               },
-              "queryRef": "order_items.Total Sales",
-              "nativeQueryRef": "Total Sales"
+              "queryRef": "customers.Average Revenue per Customer",
+              "nativeQueryRef": "Average Revenue per Customer"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "order_items"
+                    "Entity": "customers"
                   }
                 },
-                "Property": "Total Sales"
+                "Property": "Average Revenue per Customer"
               }
             },
             "direction": "Descending"
@@ -74,48 +74,7 @@
       "categoryAxis": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1000000D"
-                }
-              }
-            },
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -134,18 +93,42 @@
                   "Value": "true"
                 }
               }
-            },
-            "labelPrecision": {
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "1L"
+                  "Value": "false"
                 }
               }
             },
-            "enableValueDataLabel": {
+            "showAxisTitle": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 5,
+                      "Percent": 0
+                    }
+                  }
                 }
               }
             }
@@ -160,7 +143,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 5 Customer States by Sales'"
+                  "Value": "'Average Spend per Customer by State'"
                 }
               }
             }
@@ -173,7 +156,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "2be903ce54932fb9e30a",
+        "name": "edde288c92711f7296e6",
         "field": {
           "Column": {
             "Expression": {
@@ -199,11 +182,6 @@
                         "Name": "c",
                         "Entity": "customers",
                         "Type": 0
-                      },
-                      {
-                        "Name": "o",
-                        "Entity": "order_items",
-                        "Type": 0
                       }
                     ],
                     "Select": [
@@ -226,15 +204,15 @@
                           "Measure": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "o"
+                                "Source": "c"
                               }
                             },
-                            "Property": "Total Sales"
+                            "Property": "Average Revenue per Customer"
                           }
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 10
                   }
                 }
               },
@@ -272,20 +250,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "c1cb2abc81188b444977",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_items"
-              }
-            },
-            "Property": "Total Sales"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

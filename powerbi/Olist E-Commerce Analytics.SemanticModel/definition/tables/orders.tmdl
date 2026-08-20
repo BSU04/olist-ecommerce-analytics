@@ -28,6 +28,20 @@ table orders
 		formatString: 0
 		lineageTag: fa106c6d-c3ee-49e3-a31c-ec8ae81d1f08
 
+	measure 'Orders per Customer' = DIVIDE([Total Orders], [Total Customers])
+		formatString: 0.0
+		lineageTag: 2e39a811-8cee-4a0f-951b-9994561be890
+
+	measure 'Total Sales (Through Aug 2018)' =
+			
+			CALCULATE(
+			    [Total Sales],
+			    orders[order_purchase_timestamp] < DATE(2018, 8, 30)
+			)
+		lineageTag: 0872e000-dfe9-4598-bdd3-8c24e57fb3c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column order_id
 		dataType: string
 		lineageTag: e6dfdcf7-8877-4757-8818-5794250ea8cc
@@ -136,6 +150,50 @@ table orders
 		lineageTag: 14f6dd74-bc1c-4eda-b1c8-5c405ca04a80
 		summarizeBy: none
 		sourceColumn: delivery_performance
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week' =
+			
+			FORMAT(
+			    orders[order_purchase_timestamp],
+			    "ddd"
+			)
+		lineageTag: f5aeb8be-b6a9-4288-80a5-c1b5cc423d2d
+		summarizeBy: none
+		sortByColumn: 'Day of Week Number'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week Number' =
+			
+			WEEKDAY(
+			    orders[order_purchase_timestamp],
+			    2
+			)
+		formatString: 0
+		lineageTag: 6055882c-38b8-4ab0-9764-a1834c5ac2e9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour of Day' =
+			
+			HOUR(orders[order_purchase_timestamp])
+		formatString: 0
+		lineageTag: 534dc5e6-8a17-45c3-a866-e2e08f091722
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Display' = FORMAT(TIME([Hour of Day], 0, 0), "hh:00")
+		lineageTag: e7991ac6-e75b-43dd-9c15-0a7ced4d66d8
+		summarizeBy: none
+		sortByColumn: 'Hour of Day'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "63074655bd5dd2ce8387",
+  "name": "69a50ef2aef6fe98896f",
   "position": {
-    "x": 24.677828513444954,
-    "y": 11.689497716894978,
-    "z": 8000,
-    "height": 51.9533231861999,
-    "width": 455.24099441907663,
-    "tabOrder": 8000
+    "x": 19.499455930359083,
+    "y": 8.3569096844396071,
+    "z": 9000,
+    "height": 48.748639825897712,
+    "width": 570.35908596300328,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Olist E-Commerce - Executive Overview",
+                    "value": "Olist E-Commerce - Customer and Order Behavior",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "18pt"

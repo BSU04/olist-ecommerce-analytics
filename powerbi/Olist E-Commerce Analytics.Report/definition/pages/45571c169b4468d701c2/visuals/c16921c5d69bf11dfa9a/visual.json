@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "8ff2bf5803d0b9120b99",
+  "name": "c16921c5d69bf11dfa9a",
   "position": {
-    "x": 627.33637747336377,
-    "y": 54.5509893455099,
-    "z": 3000,
-    "height": 109.1019786910198,
-    "width": 259.117199391172,
-    "tabOrder": 3000
+    "x": 727.05114254624584,
+    "y": 44.570184983677905,
+    "z": 0,
+    "height": 107.94341675734493,
+    "width": 250.01088139281828,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,11 @@
                       "Entity": "orders"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Orders per Customer"
                 }
               },
-              "queryRef": "orders.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "queryRef": "orders.Orders per Customer",
+              "nativeQueryRef": "Orders per Customer"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "orders"
                   }
                 },
-                "Property": "Average Order Value"
+                "Property": "Orders per Customer"
               }
             },
             "direction": "Descending"
@@ -52,22 +52,6 @@
       }
     },
     "objects": {
-      "value": [
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "orders.Average Order Value"
-          }
-        }
-      ],
       "fillCustom": [
         {
           "properties": {
@@ -94,13 +78,29 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
+          }
+        }
+      ],
+      "value": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "1L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "orders.Orders per Customer"
           }
         }
       ]

@@ -4,10 +4,10 @@
   "position": {
     "x": 1044.022346368715,
     "y": 55.256475368207212,
-    "z": 10001,
+    "z": 10000,
     "height": 109.86287455561198,
     "width": 223.62620619603859,
-    "tabOrder": 10001
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -105,23 +105,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "9042f0b6e0d02a730fe6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_reviews"
-              }
-            },
-            "Property": "Average Review Score"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

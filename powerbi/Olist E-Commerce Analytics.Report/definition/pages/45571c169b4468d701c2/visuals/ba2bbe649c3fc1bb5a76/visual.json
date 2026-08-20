@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "8ff2bf5803d0b9120b99",
+  "name": "ba2bbe649c3fc1bb5a76",
   "position": {
-    "x": 627.33637747336377,
-    "y": 54.5509893455099,
-    "z": 3000,
-    "height": 109.1019786910198,
-    "width": 259.117199391172,
-    "tabOrder": 3000
+    "x": 259.06420021762784,
+    "y": 42.480957562568008,
+    "z": 2000,
+    "height": 110.03264417845483,
+    "width": 250.70729053318823,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "orders"
+                      "Entity": "customers"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Repeat Customer Rate"
                 }
               },
-              "queryRef": "orders.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "queryRef": "customers.Repeat Customer Rate",
+              "nativeQueryRef": "Repeat Customer Rate"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "orders"
+                    "Entity": "customers"
                   }
                 },
-                "Property": "Average Order Value"
+                "Property": "Repeat Customer Rate"
               }
             },
             "direction": "Descending"
@@ -52,22 +52,6 @@
       }
     },
     "objects": {
-      "value": [
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "orders.Average Order Value"
-          }
-        }
-      ],
       "fillCustom": [
         {
           "properties": {
@@ -101,6 +85,20 @@
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "customers.Repeat Customer Rate"
           }
         }
       ]

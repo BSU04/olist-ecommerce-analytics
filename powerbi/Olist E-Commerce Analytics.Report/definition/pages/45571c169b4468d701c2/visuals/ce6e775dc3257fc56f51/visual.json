@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "8ff2bf5803d0b9120b99",
+  "name": "ce6e775dc3257fc56f51",
   "position": {
-    "x": 627.33637747336377,
-    "y": 54.5509893455099,
-    "z": 3000,
-    "height": 109.1019786910198,
-    "width": 259.117199391172,
-    "tabOrder": 3000
+    "x": 9.0533188248095744,
+    "y": 41.784548422198036,
+    "z": 1000,
+    "height": 110.7290533188248,
+    "width": 272.2959738846572,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "orders"
+                      "Entity": "customers"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Average Revenue per Customer"
                 }
               },
-              "queryRef": "orders.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "queryRef": "customers.Average Revenue per Customer",
+              "nativeQueryRef": "Average Revenue per Customer"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "orders"
+                    "Entity": "customers"
                   }
                 },
-                "Property": "Average Order Value"
+                "Property": "Average Revenue per Customer"
               }
             },
             "direction": "Descending"
@@ -52,22 +52,6 @@
       }
     },
     "objects": {
-      "value": [
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "orders.Average Order Value"
-          }
-        }
-      ],
       "fillCustom": [
         {
           "properties": {
@@ -94,13 +78,27 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             }
           },
           "selector": {
             "id": "default"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "customers.Average Revenue per Customer"
           }
         }
       ]

@@ -258,20 +258,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "44c832950d88cbd876b3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_items"
-              }
-            },
-            "Property": "Total Sales"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

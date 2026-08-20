@@ -5,6 +5,31 @@ table customers
 		formatString: 0
 		lineageTag: b737e32e-e3ad-4192-bba5-36fa045e956e
 
+	measure 'Average Revenue per Customer' = DIVIDE([Total Sales], [Total Customers])
+		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		lineageTag: 7fcc7ec2-42ca-434f-b669-a736045b285a
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Repeat Customer Rate' =
+			
+			VAR CustomerOrderCounts =
+			    ADDCOLUMNS(
+			        VALUES(customers[customer_unique_id]),
+			        "OrderCount", CALCULATE(DISTINCTCOUNT(orders[order_id]))
+			    )
+			VAR RepeatCustomers =
+			    COUNTROWS(
+			        FILTER(CustomerOrderCounts, [OrderCount] > 1)
+			    )
+			RETURN
+			    DIVIDE(RepeatCustomers, [Total Customers])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 772833b9-fa51-4c50-93dc-29facad58444
+
+	measure 'Heatmap Value' = ""
+		lineageTag: 8a2dba6f-0b8f-4a70-a7c9-c6d06bcd7a5b
+
 	column customer_id
 		dataType: string
 		lineageTag: 57920e3a-de06-4f94-8e79-1a06b98fd63c

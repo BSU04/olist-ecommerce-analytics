@@ -4,10 +4,10 @@
   "position": {
     "x": 24.439140811455847,
     "y": 173.11058074781224,
-    "z": 8000,
+    "z": 7000,
     "height": 289.1964996022275,
     "width": 616.07000795544946,
-    "tabOrder": 8000
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineChart",
@@ -60,6 +60,32 @@
                       "Hierarchy": "Date Hierarchy"
                     }
                   },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "orders.order_purchase_timestamp.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "order_purchase_timestamp Quarter",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "orders"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "order_purchase_timestamp"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
                   "Level": "Month"
                 }
               },
@@ -76,14 +102,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "order_items"
+                      "Entity": "orders"
                     }
                   },
-                  "Property": "Total Sales"
+                  "Property": "Total Sales (Through Aug 2018)"
                 }
               },
-              "queryRef": "order_items.Total Sales",
-              "nativeQueryRef": "Total Sales"
+              "queryRef": "orders.Total Sales (Through Aug 2018)",
+              "nativeQueryRef": "Total Sales",
+              "displayName": "Total Sales"
             }
           ]
         }
@@ -104,6 +131,20 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scalar'"
                 }
               }
             }
@@ -158,6 +199,45 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "strokeColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1F77B4'"
+                    }
+                  }
+                }
+              }
+            },
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
+                }
+              }
+            },
+            "interpolationStep": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "lineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'solid'"
+                }
+              }
+            },
+            "strokeLineJoin": {
+              "expr": {
+                "Literal": {
+                  "Value": "'miter'"
                 }
               }
             }
@@ -303,5 +383,98 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a97d42f5e0cc169b6c24",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "orders"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "order_purchase_timestamp"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8e6c19eb835bd684c1c1",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "orders"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "order_purchase_timestamp"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Quarter"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4d105acca327eb011065",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "orders"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "order_purchase_timestamp"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f4741ae37d5d5e1e1f63",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "orders"
+              }
+            },
+            "Property": "Total Sales (Through Aug 2018)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

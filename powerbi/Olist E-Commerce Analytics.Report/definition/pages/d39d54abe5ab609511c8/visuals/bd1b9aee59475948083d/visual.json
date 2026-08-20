@@ -106,23 +106,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cb3858b466190edbeb7d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "orders"
-              }
-            },
-            "Property": "Delivery Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -11,6 +11,11 @@ table order_payments
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Average Payment Installments' = AVERAGE(order_payments[payment_installments])
+		lineageTag: 545b0098-910c-4a5c-9052-f49738af4b71
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column order_id
 		dataType: string
 		lineageTag: 75875032-339d-42c8-9dea-8c7636dbc6ef

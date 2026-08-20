@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "8ff2bf5803d0b9120b99",
+  "name": "dd6070c75bb3a3a0435d",
   "position": {
-    "x": 627.33637747336377,
-    "y": 54.5509893455099,
+    "x": 484.00435255712728,
+    "y": 41.784548422198036,
     "z": 3000,
-    "height": 109.1019786910198,
-    "width": 259.117199391172,
+    "height": 110.7290533188248,
+    "width": 266.72470076169748,
     "tabOrder": 3000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "orders"
+                      "Entity": "order_payments"
                     }
                   },
-                  "Property": "Average Order Value"
+                  "Property": "Average Payment Installments"
                 }
               },
-              "queryRef": "orders.Average Order Value",
-              "nativeQueryRef": "Average Order Value"
+              "queryRef": "order_payments.Average Installments per Order",
+              "nativeQueryRef": "Average Payment Installments"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "orders"
+                    "Entity": "order_payments"
                   }
                 },
-                "Property": "Average Order Value"
+                "Property": "Average Payment Installments"
               }
             },
             "direction": "Descending"
@@ -52,22 +52,6 @@
       }
     },
     "objects": {
-      "value": [
-        {
-          "properties": {
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "orders.Average Order Value"
-          }
-        }
-      ],
       "fillCustom": [
         {
           "properties": {
@@ -94,7 +78,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             }
