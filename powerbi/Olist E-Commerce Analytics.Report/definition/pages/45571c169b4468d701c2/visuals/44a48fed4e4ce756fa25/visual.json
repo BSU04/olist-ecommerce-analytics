@@ -290,37 +290,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6c863215bf3f239dc52b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "orders"
-              }
-            },
-            "Property": "delivery_performance"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4f51aae4d869d2c04df9",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_reviews"
-              }
-            },
-            "Property": "Average Review Score"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

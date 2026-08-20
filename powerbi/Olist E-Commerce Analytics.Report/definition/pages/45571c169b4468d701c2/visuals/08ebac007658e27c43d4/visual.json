@@ -395,20 +395,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d0b26d2f2b904a6f3162",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_payments"
-              }
-            },
-            "Property": "Total Payment Value"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

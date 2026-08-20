@@ -571,51 +571,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "61ff98c8c6d4f3afb78d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "orders"
-              }
-            },
-            "Property": "Day of Week"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "02624ca0ddf28f437a1b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "customers"
-              }
-            },
-            "Property": "Heatmap Value"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "48fe9dd4fac0af4ca453",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "orders"
-              }
-            },
-            "Property": "Hour Display"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
