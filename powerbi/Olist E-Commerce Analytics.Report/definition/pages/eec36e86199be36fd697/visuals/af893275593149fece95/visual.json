@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "ba2bbe649c3fc1bb5a76",
+  "name": "af893275593149fece95",
   "position": {
-    "x": 259.06420021762784,
-    "y": 42.480957562568008,
-    "z": 2000,
-    "height": 110.03264417845483,
-    "width": 250.70729053318823,
-    "tabOrder": 2000
+    "x": 398.52760736196319,
+    "y": 47.770961145194278,
+    "z": 3000,
+    "height": 106.01226993865031,
+    "width": 229.03885480572598,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "customers"
+                      "Entity": "order_items"
                     }
                   },
-                  "Property": "Repeat Customer Rate"
+                  "Property": "Average Item Price"
                 }
               },
-              "queryRef": "customers.Repeat Customer Rate",
-              "nativeQueryRef": "Repeat Customer Rate"
+              "queryRef": "order_items.Average Item Price",
+              "nativeQueryRef": "Average Item Price"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "customers"
+                    "Entity": "order_items"
                   }
                 },
-                "Property": "Repeat Customer Rate"
+                "Property": "Average Item Price"
               }
             },
             "direction": "Descending"
@@ -78,27 +78,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
                   "Value": "10D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "customers.Repeat Customer Rate"
+            "id": "default"
           }
         }
       ],
@@ -117,7 +103,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B4332'"
+                      "Value": "'#0F172A'"
                     }
                   }
                 }

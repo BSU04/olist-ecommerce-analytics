@@ -16,6 +16,47 @@ table order_items
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: b2a3b85c-8cad-4ff5-9443-2fb5728d9198
 
+	measure 'Total Items Sold' =
+			
+			COUNTROWS(order_items)
+		formatString: 0
+		lineageTag: b7d8ffca-85fb-47bf-bfac-c99b712bdae2
+
+	measure 'Average Item Price' =
+			
+			AVERAGE(order_items[price])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: bf4af6b0-67f2-4341-a851-8f2cf71c71b5
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure 'Average Items per Order' =
+			
+			DIVIDE(
+			    [Total Items Sold],
+			    [Total Orders]
+			)
+		formatString: 0
+		lineageTag: 9833f5f1-2226-4afe-a8ed-6b275f047615
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Average Freight Cost' =
+			
+			AVERAGE(order_items[freight_value])
+		lineageTag: 87d222f4-f35c-4c5d-8d9e-a2d54a315faa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Share of Sales' =
+			
+			DIVIDE(
+			    SUM(order_items[price]),
+			    CALCULATE(SUM(order_items[price]), ALL(products[product_category_name])
+			))
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3cace11b-5ba4-4911-b2d9-aa829600616c
+
 	column order_id
 		dataType: string
 		lineageTag: 1341ed03-0c7b-44a3-bb4b-f148a1f5d95a

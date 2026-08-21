@@ -104,23 +104,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d36b269ba3c04c4bbe11",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_items"
-              }
-            },
-            "Property": "Freight Cost % of Sales"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

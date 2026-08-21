@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "ba2bbe649c3fc1bb5a76",
+  "name": "624aa6a54fd6ae4c72e2",
   "position": {
-    "x": 259.06420021762784,
-    "y": 42.480957562568008,
+    "x": 203.51738241308794,
+    "y": 47.116564417177912,
     "z": 2000,
-    "height": 110.03264417845483,
-    "width": 250.70729053318823,
+    "height": 106.66666666666667,
+    "width": 207.44376278118611,
     "tabOrder": 2000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "customers"
+                      "Entity": "order_items"
                     }
                   },
-                  "Property": "Repeat Customer Rate"
+                  "Property": "Total Items Sold"
                 }
               },
-              "queryRef": "customers.Repeat Customer Rate",
-              "nativeQueryRef": "Repeat Customer Rate"
+              "queryRef": "order_items.Total Items Sold",
+              "nativeQueryRef": "Total Items Sold"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "customers"
+                    "Entity": "order_items"
                   }
                 },
-                "Property": "Repeat Customer Rate"
+                "Property": "Total Items Sold"
               }
             },
             "direction": "Descending"
@@ -78,27 +78,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
                   "Value": "10D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "customers.Repeat Customer Rate"
+            "id": "default"
           }
         }
       ],
@@ -117,7 +103,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B4332'"
+                      "Value": "'#0F172A'"
                     }
                   }
                 }

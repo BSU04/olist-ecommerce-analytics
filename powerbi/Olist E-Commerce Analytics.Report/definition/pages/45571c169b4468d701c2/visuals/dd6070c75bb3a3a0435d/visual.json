@@ -139,23 +139,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "99c5a9108576e4deb28e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_payments"
-              }
-            },
-            "Property": "Average Payment Installments"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

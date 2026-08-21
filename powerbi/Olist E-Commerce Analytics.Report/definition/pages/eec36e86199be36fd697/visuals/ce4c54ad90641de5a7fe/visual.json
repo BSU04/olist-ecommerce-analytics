@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "ba2bbe649c3fc1bb5a76",
+  "name": "ce4c54ad90641de5a7fe",
   "position": {
-    "x": 259.06420021762784,
-    "y": 42.480957562568008,
-    "z": 2000,
-    "height": 110.03264417845483,
-    "width": 250.70729053318823,
-    "tabOrder": 2000
+    "x": 833.04703476482621,
+    "y": 48.425357873210636,
+    "z": 5000,
+    "height": 105.35787321063395,
+    "width": 233.61963190184051,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "customers"
+                      "Entity": "order_items"
                     }
                   },
-                  "Property": "Repeat Customer Rate"
+                  "Property": "Average Freight Cost"
                 }
               },
-              "queryRef": "customers.Repeat Customer Rate",
-              "nativeQueryRef": "Repeat Customer Rate"
+              "queryRef": "order_items.Average Freight Cost",
+              "nativeQueryRef": "Average Freight Cost"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "customers"
+                    "Entity": "order_items"
                   }
                 },
-                "Property": "Repeat Customer Rate"
+                "Property": "Average Freight Cost"
               }
             },
             "direction": "Descending"
@@ -78,27 +78,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
                   "Value": "10D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "customers.Repeat Customer Rate"
+            "id": "default"
           }
         }
       ],
@@ -117,7 +103,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1B4332'"
+                      "Value": "'#0F172A'"
                     }
                   }
                 }

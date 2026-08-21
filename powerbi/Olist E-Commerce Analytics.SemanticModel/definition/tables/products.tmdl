@@ -1,6 +1,26 @@
 table products
 	lineageTag: 0fc7e367-073a-4879-9ca7-4b0684c95429
 
+	measure 'Total Products' =
+			
+			DISTINCTCOUNT(products[product_id])
+		formatString: 0
+		lineageTag: 74633f84-380c-4d02-84bf-76a1c0b22526
+
+	measure 'Active Product Categories' =
+			
+			DISTINCTCOUNT(products[product_category_name])
+		formatString: 0
+		lineageTag: 3b65b293-2266-489c-a85b-330d46bfb035
+
+	measure 'Average Product Weight' =
+			
+			AVERAGE(products[product_weight_g])
+		formatString: 0
+		lineageTag: ad32ecb8-ba98-4baf-8fd3-9cca582b0479
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
 	column product_id
 		dataType: string
 		lineageTag: a8fa9270-60d0-4406-9455-4edf0c48c189

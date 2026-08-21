@@ -93,6 +93,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
             }
           }
         }
@@ -250,6 +257,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "5921a0240af7563e7690",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customers"
+              }
+            },
+            "Property": "Average Revenue per Customer"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

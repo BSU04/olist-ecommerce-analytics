@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "3726d92114afa1f203ae",
+  "name": "58ea69b7264ffac633b7",
   "position": {
-    "x": 466.5941240478781,
-    "y": 149.72796517954296,
-    "z": 5000,
-    "height": 260.14388489208631,
-    "width": 491.51079136690646,
-    "tabOrder": 5000
+    "x": 741.70324846356448,
+    "y": 439.40298507462683,
+    "z": 10000,
+    "height": 280.9482001755926,
+    "width": 538.29675153643541,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "order_payments"
+                      "Entity": "products"
                     }
                   },
-                  "Property": "payment_installments"
+                  "Property": "product_category_name"
                 }
               },
-              "queryRef": "order_payments.payment_installments",
-              "nativeQueryRef": "payment_installments",
+              "queryRef": "products.product_category_name",
+              "nativeQueryRef": "product_category_name",
               "active": true
             }
           ]
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "order_payments"
+                      "Entity": "order_items"
                     }
                   },
-                  "Property": "Average Payment Value"
+                  "Property": "Total Items Sold"
                 }
               },
-              "queryRef": "order_payments.Average Payment Value",
-              "nativeQueryRef": "Average Payment Value"
+              "queryRef": "order_items.Total Items Sold",
+              "nativeQueryRef": "Total Items Sold"
             }
           ]
         }
@@ -55,41 +55,22 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "order_payments"
+                    "Entity": "order_items"
                   }
                 },
-                "Property": "payment_installments"
+                "Property": "Total Items Sold"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
-      "categoryAxis": [
-        {
-          "properties": {
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Categorical'"
-                }
-              }
-            },
-            "titleText": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
-                }
-              }
-            }
-          }
-        }
-      ],
       "valueAxis": [
         {
           "properties": {
@@ -101,6 +82,40 @@
               }
             },
             "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "end": {
+              "expr": {
+                "Literal": {
+                  "Value": "13000D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            },
+            "concatenateLabels": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -120,24 +135,17 @@
                 }
               }
             },
-            "enableTitleDataLabel": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "0D"
                 }
               }
             },
-            "labelOverflow": {
+            "labelPrecision": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "optimizeLabelDisplay": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "1L"
                 }
               }
             }
@@ -147,13 +155,38 @@
       "dataPoint": [
         {
           "properties": {
-            "fill": {
+            "borderShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "borderColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0
+                      "ColorId": 4,
+                      "Percent": 0.2
+                    }
+                  }
+                }
+              }
+            },
+            "borderSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#475569'"
                     }
                   }
                 }
@@ -170,7 +203,20 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average Order Value by Payment Installments'"
+                  "Value": "'Top 10 Categories by Units Sold'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "15D"
                 }
               }
             }
@@ -183,15 +229,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d1b4e675285cb2b9c9ba",
+        "name": "cb46b1d419f93c38cafb",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "order_payments"
+                "Entity": "products"
               }
             },
-            "Property": "payment_installments"
+            "Property": "product_category_name"
           }
         },
         "type": "TopN",
@@ -206,8 +252,13 @@
                     "Version": 2,
                     "From": [
                       {
+                        "Name": "p",
+                        "Entity": "products",
+                        "Type": 0
+                      },
+                      {
                         "Name": "o",
-                        "Entity": "order_payments",
+                        "Entity": "order_items",
                         "Type": 0
                       }
                     ],
@@ -216,10 +267,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "o"
+                              "Source": "p"
                             }
                           },
-                          "Property": "payment_installments"
+                          "Property": "product_category_name"
                         },
                         "Name": "field"
                       }
@@ -228,18 +279,13 @@
                       {
                         "Direction": 2,
                         "Expression": {
-                          "Aggregation": {
+                          "Measure": {
                             "Expression": {
-                              "Column": {
-                                "Expression": {
-                                  "SourceRef": {
-                                    "Source": "o"
-                                  }
-                                },
-                                "Property": "payment_installments"
+                              "SourceRef": {
+                                "Source": "o"
                               }
                             },
-                            "Function": 0
+                            "Property": "Total Items Sold"
                           }
                         }
                       }
@@ -251,8 +297,8 @@
               "Type": 2
             },
             {
-              "Name": "o",
-              "Entity": "order_payments",
+              "Name": "p",
+              "Entity": "products",
               "Type": 0
             }
           ],
@@ -265,10 +311,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "o"
+                            "Source": "p"
                           }
                         },
-                        "Property": "payment_installments"
+                        "Property": "product_category_name"
                       }
                     }
                   ],
@@ -282,20 +328,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6de31c56359847cc1a17",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_payments"
-              }
-            },
-            "Property": "Average Payment Value"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }
