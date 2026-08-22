@@ -16,10 +16,8 @@ table products
 	measure 'Average Product Weight' =
 			
 			AVERAGE(products[product_weight_g])
-		formatString: 0
+		formatString: 0.0
 		lineageTag: ad32ecb8-ba98-4baf-8fd3-9cca582b0479
-
-		annotation PBI_FormatHint = {"isDecimal":true}
 
 	column product_id
 		dataType: string

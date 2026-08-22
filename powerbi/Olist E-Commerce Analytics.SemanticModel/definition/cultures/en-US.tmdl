@@ -9012,6 +9012,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.475
 			          }
+			        },
+			        {
+			          "Average Delivery Time (Days)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -11831,75 +11841,259 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "order.average_delivery_delay": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "orders",
+			          "ConceptualProperty": "Average Delivery Delay"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "average delivery delay": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "delay": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "delivery delay": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "average delivery postponement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "average delivery interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "average delivery suspension": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "average delivery adjournment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "average delivery deferral": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "average delivery deferment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "delivery postponement": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "delivery interruption": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "delivery suspension": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "delivery adjournment": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "order.cancellation_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "orders",
+			          "ConceptualProperty": "Cancellation Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cancellation rate": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "rate": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cancellation degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cancellation frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cancellation percentage": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cancellation ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cancellation quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "frequency": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "ratio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "quotient": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "cancellation amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "order_order_delivered_carrier_date_date_hierarchy_has_order_order_delivered_carrier_date_day": {
-			      "Binding": {
-			        "ConceptualEntity": "orders"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "order.order_delivered_carrier_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "order.order_delivered_carrier_date.date_hierarchy"
-			          }
-			        },
-			        "order.order_delivered_carrier_date.day": {
-			          "Target": {
-			            "Entity": "order.order_delivered_carrier_date.day"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "order.order_delivered_carrier_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "order.order_delivered_carrier_date.day"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "order_delivered_carrier_date_hierarchies_have_order_delivered_carrier_days"
-			        }
-			      ]
-			    },
-			    "order_order_delivered_carrier_date_date_hierarchy_has_order_order_delivered_carrier_date_month": {
-			      "Binding": {
-			        "ConceptualEntity": "orders"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "order.order_delivered_carrier_date.date_hierarchy": {
-			          "Target": {
-			            "Entity": "order.order_delivered_carrier_date.date_hierarchy"
-			          }
-			        },
-			        "order.order_delivered_carrier_date.month": {
-			          "Target": {
-			            "Entity": "order.order_delivered_carrier_date.month"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "order.order_delivered_carrier_date.date_hierarchy"
-			            },
-			            "Object": {
-			              "Role": "order.order_delivered_carrier_date.month"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "order_delivered_carrier_date_hierarchies_have_order_delivered_carrier_months"
-			        }
-			      ]
-			    },
 			    "order_order_delivered_carrier_date_date_hierarchy_has_order_order_delivered_carrier_date_quarter": {
 			      "Binding": {
 			        "ConceptualEntity": "orders"
@@ -13124,6 +13318,72 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "orders_have_order_items"
+			        }
+			      ]
+			    },
+			    "order_has_cancellation_rate": {
+			      "Binding": {
+			        "ConceptualEntity": "orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "order": {
+			          "Target": {
+			            "Entity": "order"
+			          }
+			        },
+			        "order.cancellation_rate": {
+			          "Target": {
+			            "Entity": "order.cancellation_rate"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "order"
+			            },
+			            "Object": {
+			              "Role": "order.cancellation_rate"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "orders_have_cancellation_rate"
+			        }
+			      ]
+			    },
+			    "order_has_average_delivery_delay": {
+			      "Binding": {
+			        "ConceptualEntity": "orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "order": {
+			          "Target": {
+			            "Entity": "order"
+			          }
+			        },
+			        "order.average_delivery_delay": {
+			          "Target": {
+			            "Entity": "order.average_delivery_delay"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "order"
+			            },
+			            "Object": {
+			              "Role": "order.average_delivery_delay"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "orders_have_average_delivery_delay"
 			        }
 			      ]
 			    },
@@ -16102,6 +16362,72 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.9,
 			          "ID": "order_items_are_limited_on_shipping_limit_dates"
+			        }
+			      ]
+			    },
+			    "order_order_delivered_carrier_date_date_hierarchy_has_order_order_delivered_carrier_date_month": {
+			      "Binding": {
+			        "ConceptualEntity": "orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "order.order_delivered_carrier_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "order.order_delivered_carrier_date.date_hierarchy"
+			          }
+			        },
+			        "order.order_delivered_carrier_date.month": {
+			          "Target": {
+			            "Entity": "order.order_delivered_carrier_date.month"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "order.order_delivered_carrier_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "order.order_delivered_carrier_date.month"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "order_delivered_carrier_date_hierarchies_have_order_delivered_carrier_months"
+			        }
+			      ]
+			    },
+			    "order_order_delivered_carrier_date_date_hierarchy_has_order_order_delivered_carrier_date_day": {
+			      "Binding": {
+			        "ConceptualEntity": "orders"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "order.order_delivered_carrier_date.date_hierarchy": {
+			          "Target": {
+			            "Entity": "order.order_delivered_carrier_date.date_hierarchy"
+			          }
+			        },
+			        "order.order_delivered_carrier_date.day": {
+			          "Target": {
+			            "Entity": "order.order_delivered_carrier_date.day"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "order.order_delivered_carrier_date.date_hierarchy"
+			            },
+			            "Object": {
+			              "Role": "order.order_delivered_carrier_date.day"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "order_delivered_carrier_date_hierarchies_have_order_delivered_carrier_days"
 			        }
 			      ]
 			    },

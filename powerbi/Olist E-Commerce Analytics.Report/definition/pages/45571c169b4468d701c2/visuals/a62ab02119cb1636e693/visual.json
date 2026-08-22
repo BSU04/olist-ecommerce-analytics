@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "a62ab02119cb1636e693",
   "position": {
-    "x": 977.06202393906415,
-    "y": 57.105549510337319,
-    "z": 8000,
-    "height": 662.98150163220885,
-    "width": 283.43852013057671,
-    "tabOrder": 8000
+    "x": 974.05515832482115,
+    "y": 143.82022471910111,
+    "z": 7000,
+    "height": 575.93462717058219,
+    "width": 300.71501532175688,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -195,7 +195,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "11D"
                 }
               }
             }
@@ -333,7 +333,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "9D"
                 }
               }
             },
@@ -568,54 +568,21 @@
             }
           }
         }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0cd51fdda4628d1e8eec",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "orders"
-              }
-            },
-            "Property": "Day of Week"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1fca8069086316154c8a",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "orders"
-              }
-            },
-            "Property": "Hour Display"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "376ee700464049b14818",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "customers"
-              }
-            },
-            "Property": "Heatmap Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

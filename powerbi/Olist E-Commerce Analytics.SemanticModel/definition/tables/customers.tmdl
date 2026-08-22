@@ -6,7 +6,7 @@ table customers
 		lineageTag: b737e32e-e3ad-4192-bba5-36fa045e956e
 
 	measure 'Average Revenue per Customer' = DIVIDE([Total Sales], [Total Customers])
-		formatString: "R$"\ #,0;-"R$"\ #,0;"R$"\ #,0
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 7fcc7ec2-42ca-434f-b669-a736045b285a
 
 		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}

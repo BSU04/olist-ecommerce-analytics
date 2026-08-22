@@ -3,10 +3,10 @@
   "name": "a62efe18ead5cbc559ec",
   "position": {
     "x": 1044.022346368715,
-    "y": 55.256475368207212,
+    "y": 54.5509893455099,
     "z": 10000,
-    "height": 109.86287455561198,
-    "width": 223.62620619603859,
+    "height": 109,
+    "width": 232,
     "tabOrder": 10000
   },
   "visual": {
@@ -121,6 +121,22 @@
             "id": "default"
           }
         }
+      ],
+      "value": [
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "order_reviews.Average Review Score"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -131,6 +147,19 @@
               "expr": {
                 "Literal": {
                   "Value": "93D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

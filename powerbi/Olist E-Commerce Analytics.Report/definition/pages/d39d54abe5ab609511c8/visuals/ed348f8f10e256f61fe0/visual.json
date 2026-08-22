@@ -3,10 +3,10 @@
   "name": "ed348f8f10e256f61fe0",
   "position": {
     "x": 9.1646778042959429,
-    "y": 56.006364359586314,
+    "y": 54.5509893455099,
     "z": 0,
-    "height": 107.93953858392999,
-    "width": 231.15354017501988,
+    "height": 109,
+    "width": 232,
     "tabOrder": 0
   },
   "visual": {
@@ -242,6 +242,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

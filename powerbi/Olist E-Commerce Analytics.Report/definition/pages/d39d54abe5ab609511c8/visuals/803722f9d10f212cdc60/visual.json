@@ -160,7 +160,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#475569'"
+                      "Value": "'#2B417F'"
                     }
                   }
                 }
@@ -289,6 +289,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "6fd84fad4ce171b62cc4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "order_items"
+              }
+            },
+            "Property": "Total Sales"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

@@ -4,10 +4,10 @@
   "position": {
     "x": 466.5941240478781,
     "y": 412.9706202393906,
-    "z": 7000,
+    "z": 6000,
     "height": 306.42002176278561,
     "width": 490.96844396082696,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "columnChart",
@@ -257,20 +257,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "5921a0240af7563e7690",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "customers"
-              }
-            },
-            "Property": "Average Revenue per Customer"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

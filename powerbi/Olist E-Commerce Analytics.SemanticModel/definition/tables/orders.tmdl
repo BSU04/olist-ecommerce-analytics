@@ -42,6 +42,33 @@ table orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Average Delivery Delay' =
+			
+			AVERAGEX(
+			    FILTER(
+			        orders,
+			        NOT ISBLANK(orders[order_delivered_customer_date]) &&
+			        NOT ISBLANK(orders[order_estimated_delivery_date])
+			    ),
+			    DATEDIFF(
+			        orders[order_estimated_delivery_date],
+			        orders[order_delivered_customer_date],
+			        DAY
+			    )
+			)
+		lineageTag: c7bdee11-ee6a-498a-9397-29b8e7ec123f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cancellation Rate' =
+			
+			DIVIDE(
+			    [Canceled Orders],
+			    [Total Orders]
+			)
+		formatString: 0%;-0%;0%
+		lineageTag: fa5c3629-4c1d-43cd-8dc9-016da87cf189
+
 	column order_id
 		dataType: string
 		lineageTag: e6dfdcf7-8877-4757-8818-5794250ea8cc

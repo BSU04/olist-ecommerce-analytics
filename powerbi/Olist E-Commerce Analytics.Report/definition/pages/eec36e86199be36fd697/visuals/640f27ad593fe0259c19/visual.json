@@ -144,7 +144,7 @@
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#CBD5E1'"
+                                "Value": "'#64748B'"
                               }
                             }
                           },
@@ -208,7 +208,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

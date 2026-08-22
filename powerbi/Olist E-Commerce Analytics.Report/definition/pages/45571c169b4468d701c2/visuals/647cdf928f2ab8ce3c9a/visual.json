@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "90e106c6c3c0a8e9b855",
+  "name": "647cdf928f2ab8ce3c9a",
   "position": {
-    "x": 615.13292433537833,
-    "y": 48.425357873210636,
-    "z": 4000,
-    "height": 105.35787321063395,
-    "width": 231.65644171779141,
-    "tabOrder": 4000
+    "x": 1007,
+    "y": 42.205798749289364,
+    "z": 9000,
+    "height": 110,
+    "width": 273,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "order_items"
+                      "Entity": "orders"
                     }
                   },
-                  "Property": "Average Items per Order"
+                  "Property": "Average Delivery Days"
                 }
               },
-              "queryRef": "order_items.Average Items per Order",
-              "nativeQueryRef": "Average Items per Order"
+              "queryRef": "orders.Average Delivery Days",
+              "nativeQueryRef": "Average Delivery Time (Days)",
+              "displayName": "Average Delivery Time (Days)"
             }
           ]
         }
@@ -39,10 +40,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "order_items"
+                    "Entity": "orders"
                   }
                 },
-                "Property": "Average Items per Order"
+                "Property": "Average Delivery Days"
               }
             },
             "direction": "Descending"
@@ -103,7 +104,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0F172A'"
+                      "Value": "'#2D7A54'"
                     }
                   }
                 }
@@ -131,6 +132,19 @@
               "expr": {
                 "Literal": {
                   "Value": "93D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lockAspect": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

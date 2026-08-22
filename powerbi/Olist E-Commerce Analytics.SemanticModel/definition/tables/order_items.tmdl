@@ -44,9 +44,10 @@ table order_items
 	measure 'Average Freight Cost' =
 			
 			AVERAGE(order_items[freight_value])
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
 		lineageTag: 87d222f4-f35c-4c5d-8d9e-a2d54a315faa
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
 
 	measure '% Share of Sales' =
 			

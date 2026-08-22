@@ -4,10 +4,10 @@
   "position": {
     "x": 466.5941240478781,
     "y": 149.72796517954296,
-    "z": 5000,
+    "z": 4000,
     "height": 260.14388489208631,
     "width": 491.51079136690646,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -282,20 +282,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6de31c56359847cc1a17",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "order_payments"
-              }
-            },
-            "Property": "Average Payment Value"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

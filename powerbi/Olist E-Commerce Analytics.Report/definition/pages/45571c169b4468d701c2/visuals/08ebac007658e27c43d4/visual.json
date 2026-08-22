@@ -4,10 +4,10 @@
   "position": {
     "x": 19.499455930359083,
     "y": 149.72796517954296,
-    "z": 4000,
+    "z": 3000,
     "height": 253.61305361305361,
     "width": 447.55244755244757,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "donutChart",
@@ -139,9 +139,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0.4
+                    "Literal": {
+                      "Value": "'#2B4C3F'"
                     }
                   }
                 }
@@ -310,7 +309,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Sales by Payment Type'"
+                  "Value": "'Payment Value by Payment Type'"
                 }
               }
             }
